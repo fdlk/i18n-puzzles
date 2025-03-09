@@ -1,5 +1,7 @@
 import common.loadPackets
 
+import java.lang.Character.UnicodeBlock
+
 val passwords = loadPackets(List("day03.txt"))
 
 passwords
@@ -8,5 +10,4 @@ passwords
   .filter(_.exists(_.isDigit))
   .filter(_.exists(_.isUpper))
   .filter(_.exists(_.isLower))
-  .count(_.exists(_.toInt > 127))
-
+  .count(_.exists(UnicodeBlock.of(_) != UnicodeBlock.BASIC_LATIN))
