@@ -9,11 +9,9 @@ val input = loadPackets(List("day09.txt"))
 
 val entries = input.map(_.split(":").map(_.trim)).flatMap({
   case Array(date, people) => people.split(", ").map(person => person -> date)
-}).groupBy(_._1).map({
-  case (person, entries) => (person, entries.map(_._2))
-}).toVector
+}).groupMap(_._1)(_._2).toVector
 
-def tryParse(dates: List[String], format: DateTimeFormatter) =
+def createParser(format: DateTimeFormatter)(dates: List[String]) =
   try {
     dates.map(LocalDate.parse(_, format))
   } catch {
@@ -24,11 +22,14 @@ val DMY = new DateTimeFormatterBuilder().appendPattern("dd-MM-").appendValueRedu
 val MDY = new DateTimeFormatterBuilder().appendPattern("MM-dd-").appendValueReduced(YEAR, 2, 2, 1920).toFormatter.withResolverStyle(STRICT)
 val YMD = new DateTimeFormatterBuilder().appendValueReduced(YEAR, 2, 2, 1920).appendPattern("-MM-dd").toFormatter.withResolverStyle(STRICT)
 val YDM = new DateTimeFormatterBuilder().appendValueReduced(YEAR, 2, 2, 1920).appendPattern("-dd-MM").toFormatter.withResolverStyle(STRICT)
-
-def dates(entries: List[String]) = List(DMY, MDY, YMD, YDM).flatMap(format => tryParse(entries, format))
+val parsers = List(DMY, MDY, YMD, YDM).map(createParser)
 
 val nineEleven = LocalDate.parse("2001-09-11")
+def wroteOnNineEleven(entries: List[String]) = parsers
+  .flatMap(_.apply(entries))
+  .contains(nineEleven)
+
 entries.flatMap({
-  case (person, entries) if dates(entries).contains(nineEleven) => Some(person)
+  case (person, entries) if wroteOnNineEleven(entries) => Some(person)
   case _ => None
 }).sorted.mkString(" ")
