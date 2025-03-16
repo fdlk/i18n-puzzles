@@ -17,6 +17,16 @@
     <orderEntry type="library" name="sbt: scala-sdk-3.3.4" level="project" />
     <orderEntry type="library" name="sbt: org.scala-lang:scala3-library_3:3.3.4:jar" level="project" />
     <orderEntry type="library" name="sbt: org.scala-lang.modules:scala-parallel-collections_3:1.1.0:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.springframework.security:spring-security-core:6.4.3:jar" level="project" />
     <orderEntry type="library" name="sbt: org.scala-lang:scala-library:2.13.14:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.springframework.security:spring-security-crypto:6.4.3:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.springframework:spring-aop:6.2.3:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.springframework:spring-beans:6.2.3:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.springframework:spring-context:6.2.3:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.springframework:spring-core:6.2.3:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.springframework:spring-expression:6.2.3:jar" level="project" />
+    <orderEntry type="library" name="sbt: io.micrometer:micrometer-observation:1.14.4:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.springframework:spring-jcl:6.2.3:jar" level="project" />
+    <orderEntry type="library" name="sbt: io.micrometer:micrometer-commons:1.14.4:jar" level="project" />
   </component>
 </module>
