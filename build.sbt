@@ -25,9 +25,10 @@ version := "1.0"
 // Want to use a published library in your project?
 // You can define other libraries as dependencies in your build like this:
 
-//libraryDependencies += "com.lihaoyi" %% "fastparse" % "2.3.3"
+libraryDependencies += "com.lihaoyi" %% "fastparse" % "3.1.1"
 libraryDependencies += "org.scala-lang.modules" %% "scala-parallel-collections" % "1.1.0"
 libraryDependencies += "org.springframework.security" % "spring-security-core" % "6.4.3"
+libraryDependencies += "org.apache.commons" % "commons-numbers-fraction" % "1.2"
 
 //// https://mvnrepository.com/artifact/gov.nist.math/jama
 //libraryDependencies += "gov.nist.math" % "jama" % "1.0.3"
@@ -41,7 +42,7 @@ libraryDependencies += "org.springframework.security" % "spring-security-core" %
 // TIP: To find the "dependency" that you need to add to the
 // `libraryDependencies` set, which in the above example looks like this:
 
-// "org.scala-lang.modules" %% "scala-parser-combinators" % "1.1.2"
+
 
 // You can use Scaladex, an index of all known published Scala libraries. There,
 // after you find the library you want, you can just copy/paste the dependency
