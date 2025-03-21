@@ -26,9 +26,11 @@ version := "1.0"
 // You can define other libraries as dependencies in your build like this:
 
 libraryDependencies += "com.lihaoyi" %% "fastparse" % "3.1.1"
-libraryDependencies += "org.scala-lang.modules" %% "scala-parallel-collections" % "1.1.0"
-libraryDependencies += "org.springframework.security" % "spring-security-core" % "6.4.3"
+libraryDependencies += "org.scala-lang.modules" %% "scala-parallel-collections" % "1.2.0"
+libraryDependencies += "org.springframework.security" % "spring-security-core" % "6.4.4"
 libraryDependencies += "org.apache.commons" % "commons-numbers-fraction" % "1.2"
+libraryDependencies += "com.google.guava" % "guava" % "33.4.5-jre"
+
 
 //// https://mvnrepository.com/artifact/gov.nist.math/jama
 //libraryDependencies += "gov.nist.math" % "jama" % "1.0.3"

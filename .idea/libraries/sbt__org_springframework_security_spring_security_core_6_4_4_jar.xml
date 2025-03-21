@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="sbt: org.springframework.security:spring-security-core:6.4.4:jar" external-system-id="SBT">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.cache/coursier/v1/https/repo1.maven.org/maven2/org/springframework/security/spring-security-core/6.4.4/spring-security-core-6.4.4.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.cache/coursier/v1/https/repo1.maven.org/maven2/org/springframework/security/spring-security-core/6.4.4/spring-security-core-6.4.4-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

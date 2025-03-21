@@ -17,21 +17,27 @@
     <orderEntry type="library" name="sbt: scala-sdk-3.3.4" level="project" />
     <orderEntry type="library" name="sbt: org.scala-lang:scala3-library_3:3.3.4:jar" level="project" />
     <orderEntry type="library" name="sbt: com.lihaoyi:fastparse_3:3.1.1:jar" level="project" />
-    <orderEntry type="library" name="sbt: org.scala-lang.modules:scala-parallel-collections_3:1.1.0:jar" level="project" />
-    <orderEntry type="library" name="sbt: org.springframework.security:spring-security-core:6.4.3:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.scala-lang.modules:scala-parallel-collections_3:1.2.0:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.springframework.security:spring-security-core:6.4.4:jar" level="project" />
     <orderEntry type="library" name="sbt: org.apache.commons:commons-numbers-fraction:1.2:jar" level="project" />
+    <orderEntry type="library" name="sbt: com.google.guava:guava:33.4.5-jre:jar" level="project" />
     <orderEntry type="library" name="sbt: org.scala-lang:scala-library:2.13.14:jar" level="project" />
     <orderEntry type="library" name="sbt: com.lihaoyi:sourcecode_3:0.4.0:jar" level="project" />
     <orderEntry type="library" name="sbt: com.lihaoyi:geny_3:1.1.0:jar" level="project" />
-    <orderEntry type="library" name="sbt: org.springframework.security:spring-security-crypto:6.4.3:jar" level="project" />
-    <orderEntry type="library" name="sbt: org.springframework:spring-aop:6.2.3:jar" level="project" />
-    <orderEntry type="library" name="sbt: org.springframework:spring-beans:6.2.3:jar" level="project" />
-    <orderEntry type="library" name="sbt: org.springframework:spring-context:6.2.3:jar" level="project" />
-    <orderEntry type="library" name="sbt: org.springframework:spring-core:6.2.3:jar" level="project" />
-    <orderEntry type="library" name="sbt: org.springframework:spring-expression:6.2.3:jar" level="project" />
-    <orderEntry type="library" name="sbt: io.micrometer:micrometer-observation:1.14.4:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.springframework.security:spring-security-crypto:6.4.4:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.springframework:spring-aop:6.2.4:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.springframework:spring-beans:6.2.4:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.springframework:spring-context:6.2.4:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.springframework:spring-core:6.2.4:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.springframework:spring-expression:6.2.4:jar" level="project" />
+    <orderEntry type="library" name="sbt: io.micrometer:micrometer-observation:1.14.5:jar" level="project" />
     <orderEntry type="library" name="sbt: org.apache.commons:commons-numbers-core:1.2:jar" level="project" />
-    <orderEntry type="library" name="sbt: org.springframework:spring-jcl:6.2.3:jar" level="project" />
-    <orderEntry type="library" name="sbt: io.micrometer:micrometer-commons:1.14.4:jar" level="project" />
+    <orderEntry type="library" name="sbt: com.google.guava:failureaccess:1.0.3:jar" level="project" />
+    <orderEntry type="library" name="sbt: com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.jspecify:jspecify:1.0.0:jar" level="project" />
+    <orderEntry type="library" name="sbt: com.google.errorprone:error_prone_annotations:2.36.0:jar" level="project" />
+    <orderEntry type="library" name="sbt: com.google.j2objc:j2objc-annotations:3.0.0:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.springframework:spring-jcl:6.2.4:jar" level="project" />
+    <orderEntry type="library" name="sbt: io.micrometer:micrometer-commons:1.14.5:jar" level="project" />
   </component>
 </module>
