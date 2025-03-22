@@ -2,6 +2,7 @@ import java.io.File
 import scala.annotation.tailrec
 import scala.collection.convert.ImplicitConversions.`iterable AsScalaIterable`
 import scala.collection.mutable
+import scala.io.Codec
 
 package object common {
 
@@ -54,7 +55,7 @@ package object common {
     result
   }
 
-  def loadPackets(dictionaryPath: List[String]): List[String] = {
+  def loadPackets(dictionaryPath: List[String], codec: Codec = Codec.UTF8): List[String] = {
     val wordstream = Option {
       getClass.getClassLoader.getResourceAsStream(dictionaryPath.mkString("/"))
     } orElse {
@@ -63,7 +64,7 @@ package object common {
       sys.error("Could not load word list, dictionary file not found")
     }
     try {
-      val s = scala.io.Source.fromInputStream(wordstream)
+      val s = scala.io.Source.fromInputStream(wordstream)(codec)
       s.getLines.toList
     } catch {
       case e: Exception =>
