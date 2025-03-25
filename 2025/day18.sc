@@ -4,25 +4,26 @@ import scala.annotation.tailrec
 import fastparse.*
 import ScriptWhitespace.*
 import fastparse.Parsed.Success
+import org.apache.commons.numbers.fraction.BigFraction
 
 val input = loadPackets(List("day18.txt"))
 
 case object calculator {
-  def eval(tree: (Double, Seq[(String, Double)])) =
+  def eval(tree: (BigFraction, Seq[(String, BigFraction)])) =
     val (base, ops) = tree
     ops.foldLeft(base) {
       case (left, (op, right)) => op match
-        case "+" => left + right
-        case "-" => left - right
-        case "*" => left * right
-        case "/" => left / right
+        case "+" => left.add(right)
+        case "-" => left.subtract(right)
+        case "*" => left.multiply(right)
+        case "/" => left.divide(right)
     }
-  def number[$: P]: P[Double] = P(CharIn("0-9").rep(1).!.map(_.toDouble))
-  def parens[$: P]: P[Double] = P("(" ~/ addSub ~ ")")
-  def factor[$: P]: P[Double] = P(number | parens)
-  def divMul[$: P]: P[Double] = P(factor ~ (CharIn("*/").! ~/ factor).rep).map(eval)
-  def addSub[$: P]: P[Double] = P(divMul ~ (CharIn("+\\-").! ~/ divMul).rep).map(eval)
-  def expr[$: P]: P[Long] = P(addSub ~ End).map(_.round)
+  def number[$: P]: P[BigFraction] = P(CharIn("0-9").rep(1).!.map(_.toInt).map(BigFraction.of))
+  def parens[$: P]: P[BigFraction] = P("(" ~/ addSub ~ ")")
+  def factor[$: P]: P[BigFraction] = P(number | parens)
+  def divMul[$: P]: P[BigFraction] = P(factor ~ (CharIn("*/").! ~/ factor).rep).map(eval)
+  def addSub[$: P]: P[BigFraction] = P(divMul ~ (CharIn("+\\-").! ~/ divMul).rep).map(eval)
+  def expr[$: P]: P[Long] = P(addSub ~ End).map(_.longValue)
 }
 
 def bidi(line: String, level: Int = 0): List[Int] =
@@ -45,11 +46,11 @@ def reverseLevel(level: Int, line: String, levels: List[Int], from: Int = 0): St
   if from >= line.length then return reverseLevel(level - 1, line, levels)
   val start = levels.indexWhere(_ >= level, from)
   if start == -1 then return reverseLevel(level - 1, line, levels)
-    var end = levels.indexWhere(_ < level, start)
-    if end == -1 then end = line.length
-    val stretch = line.slice(start, end)
-    val reversed = line.slice(0, start) + reverse(stretch) + line.slice(end, line.length)
-    reverseLevel(level, reversed, levels, end)
+  var end = levels.indexWhere(_ < level, start)
+  if end == -1 then end = line.length
+  val stretch = line.slice(start, end)
+  val reversed = line.slice(0, start) + reverse(stretch) + line.slice(end, line.length)
+  reverseLevel(level, reversed, levels, end)
 }
 
 def cleanMarks(value: String) = value.replaceAll("""[\u2067\u2066\u2069⏴⏵⏶]""", "")
@@ -65,4 +66,4 @@ def lynx(line: String): Long = {
   rex(flipped)
 }
 
-val totalDiff = input.map(line => (lynx(line)-rex(line)).abs).sum
+val totalDiff = input.map(line => (lynx(line) - rex(line)).abs).sum
